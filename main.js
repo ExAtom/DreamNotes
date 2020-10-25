@@ -11,10 +11,18 @@ var notesTest = [
   }
 ];
 
-localStorage.setItem(notes, JSON.stringify(notesTest));
+localStorage.setItem("notes", JSON.stringify(notesTest));
+
+localStorage.setItem("password", "Abc123456")
 
 var notes = JSON.parse(localStorage.getItem("notes"));
+var password = localStorage.getItem("password");
 
 function login() {
-  
+  if (document.getElementById("passwordInput").value == password) {
+    console.log("Helyes jelszó!")
+  }
+  else {
+    console.log("Helytelen jelszó!")
+  }
 }
