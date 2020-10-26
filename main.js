@@ -1,4 +1,4 @@
-var notesTest = [
+let notesTest = [
   {
     title: "first",
     content:
@@ -23,17 +23,14 @@ var notesTest = [
 ];
 
 notesTest.sort((a, b) => {
-  var date1 = new Date(a.date).getTime();
-  var date2 = new Date(b.date).getTime();
+  let date1 = new Date(a.date).getTime();
+  let date2 = new Date(b.date).getTime();
   return date1 - date2;
 });
-
-localStorage.setItem("notes", JSON.stringify(notesTest));
-
 localStorage.setItem("password", "1234");
 
-var notes = JSON.parse(localStorage.getItem("notes"));
-var password = localStorage.getItem("password");
+let notes = JSON.parse(localStorage.getItem("notes"));
+let password = localStorage.getItem("password");
 
 function login() {
   if (document.getElementById("passwordInput").value == password) {
@@ -45,7 +42,7 @@ function login() {
 }
 
 function loadSite() {
-  var siteContent = "";
+  let siteContent = "";
   notesTest.forEach(i => {
     siteContent += `<div>${i.title}: ${i.content} - on ${i.date}</div>`
   });
