@@ -44,11 +44,13 @@ function setSetting(setting, value) {
   localStorage.setItem(setting, value);
 }
 
+function toggleClass(id, className) {
+  document.getElementById(id).classList.toggle(className);
+}
+
 function loadLogin() {
-  if (password == null) {
-    document.getElementById("login").classList.add("no_account");
-    console.log("no password");
-  }
+  if (password == null)
+    toggleClass("login", "no_account");
 }
 
 function login() {
@@ -70,6 +72,6 @@ function loadSite() {
       siteContent += `<div>${i.title}: ${i.content} - on ${i.date}</div>`;
     });
   }
-  document.getElementById("login").classList.add("hide");
+  toggleClass("login", "hide");
   document.getElementById("content").innerHTML = siteContent;
 }

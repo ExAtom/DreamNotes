@@ -1,10 +1,13 @@
 input,
-.no_account #newPasswordInput {
+.no_account #newPasswordInput,
+#login.hide .add_note {
   display: block;
 }
 
 #newPasswordInput,
 .no_account #passwordInput,
-#login.hide {
+#login.hide input,
+#login.hide button,
+.add_note {
   display: none;
 }
