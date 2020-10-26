@@ -1,0 +1,10 @@
+input,
+.no_account #newPasswordInput {
+  display: block;
+}
+
+#newPasswordInput,
+.no_account #passwordInput,
+#login.hide {
+  display: none;
+}

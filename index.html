@@ -9,10 +9,13 @@
   <script src="main.js"></script>
 </head>
 
-<body>
-  <input type="password" pattern="[0-9]*" inputmode="numeric" id="newPasswordInput" placeholder="New password"><br>
-  <input type="password" pattern="[0-9]*" inputmode="numeric" id="passwordInput" placeholder="Password"><br>
-  <button onclick="login()">Log In</button>
+<body onload="loadLogin()">
+  <div id="login">
+    <input type="password" pattern="[0-9]*" inputmode="numeric" id="newPasswordInput" placeholder="New password">
+    <input type="password" pattern="[0-9]*" inputmode="numeric" id="passwordInput" placeholder="Password" onchange="login()">
+    <button onclick="login()">Log In</button>
+    <button onclick="localStorage.clear()">Reset</button>
+  </div>
   <div id="content"></div>
 </body>
 
