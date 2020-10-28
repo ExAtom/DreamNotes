@@ -9,8 +9,6 @@ function sortNotes() {
   });
 }
 
-console.log(notes);
-
 function setSetting(setting, value) {
   switch (setting) {
     case "password":
