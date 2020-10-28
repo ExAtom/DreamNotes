@@ -49,8 +49,7 @@ function toggleClass(id, className) {
 }
 
 function loadLogin() {
-  if (password == null)
-    toggleClass("login", "no_account");
+  if (password == null) toggleClass("login", "no_account");
 }
 
 function login() {
@@ -72,6 +71,10 @@ function loadSite() {
       siteContent += `<div>${i.title}: ${i.content} - on ${i.date}</div>`;
     });
   }
-  toggleClass("login", "hide");
-  document.getElementById("content").innerHTML = siteContent;
+  toggleClass("body", "hide-login");
+  document.getElementById("notes").innerHTML = siteContent;
+}
+
+function addNote() {
+  toggleClass("body", "show-editor");
 }

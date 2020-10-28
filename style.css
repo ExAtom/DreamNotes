@@ -1,13 +1,17 @@
 input,
+textarea,
 .no_account #newPasswordInput,
-#login.hide .add_note {
+.hide-login .add-note,
+.show-editor .note-editor {
   display: block;
 }
 
 #newPasswordInput,
 .no_account #passwordInput,
-#login.hide input,
-#login.hide button,
-.add_note {
+.hide-login .login,
+.add-note,
+.show-editor .add-note,
+.note-editor,
+.show-editor #notes {
   display: none;
 }
