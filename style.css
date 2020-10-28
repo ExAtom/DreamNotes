@@ -1,13 +1,13 @@
 input,
 textarea,
-.no_account #newPasswordInput,
+.no-account #newPasswordInput,
 .hide-login .add-note,
 .show-editor .note-editor {
   display: block;
 }
 
 #newPasswordInput,
-.no_account #passwordInput,
+.no-account #passwordInput,
 .hide-login .login,
 .add-note,
 .show-editor .add-note,

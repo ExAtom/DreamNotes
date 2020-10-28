@@ -18,8 +18,9 @@
   </div>
   <button onclick="addNote()" class="add-note">Add note</button>
   <div class="note-editor">
+    <input id="title" type="text" placeholder="Title">
     <textarea id="note" cols="30" rows="10" placeholder="Write your Dream Note here"></textarea>
-    <button onclick="addNote()" id="back">Back</button>
+    <button onclick="closeNote()" id="back">Back</button>
   </div>
   <div id="notes"></div>
 </body>
