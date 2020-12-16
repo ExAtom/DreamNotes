@@ -48,7 +48,7 @@ function loadSite(loginVisible) {
       // let currentDate = new Date(i.date);
       // siteContent += `<div>${i.title}: ${i.content} - on${currentDate.getFullYear()}. ${currentDate.getMonth()}. ${currentDate.getDay()}.</div>`
       let d = new Date(i.date);
-      siteContent += `<div>${i.title}: ${i.content} - ${d.getMonth()}/${d.getDate()}/${d.getFullYear()}, ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}</div>`;
+      siteContent += `<div>${i.title}: ${i.content} - ${d.getMonth()}/${d.getDate()}/${d.getFullYear()}, ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()} <button onclick="openNote('${i.title}')">Edit</button></div>`;
     });
   }
   if (loginVisible) toggleClass("body", "hide-login");
@@ -56,8 +56,8 @@ function loadSite(loginVisible) {
 }
 
 function addNote() {
-  document.getElementById("note").value = "";
   document.getElementById("title").value = "";
+  document.getElementById("note").value = "";
   toggleClass("body", "show-editor");
 }
 
@@ -65,8 +65,8 @@ function closeNote() {
   let noteTitle = document.getElementById("title").value;
   let note = document.getElementById("note").value;
   let d = new Date();
-  console.log("Title: " + title);
-  console.log("Note: " + note);
+  // console.log("Title: " + title);
+  // console.log("Note: " + note);
   if (noteTitle != "" && note != "") {
     setSetting("notes", {
       title: noteTitle,
@@ -78,4 +78,11 @@ function closeNote() {
   loadSite(false);
 }
 
-function openNote(title) {}
+function openNote(title) {
+  let note = notes.find(note => {
+    return note.title == title;
+  });
+  document.getElementById("title").value = note.title;
+  document.getElementById("note").value = note.content;
+  toggleClass("body", "show-editor");
+}
